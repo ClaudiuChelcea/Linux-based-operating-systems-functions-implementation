@@ -1,0 +1,34 @@
+# 332 CA - Chelcea Claudiu-Marian
+# claudiu.chelcea@stud.acs.ubp.ro
+
+This homework is about implementing 4 memory allocation functions.
+* os_malloc: allocates memory of a given size and returns a pointer to the allocated memory block.
+* os_calloc: allocates memory for an array of elements, initializes them to zero, and returns a pointer to the allocated memory block.
+* os_realloc: resizes a previously allocated memory block to a new size, and returns a pointer to the new block.
+* os_free: frees a previously allocated memory block.
+
+The code structure is composed of different structs and functions:
+* mini_meta: a struct used to represent a memory block.
+* full_block: a struct used to keep track of the beginning and the end of the memory blocks.
+* meta: a struct used to represent a memory block, similar to mini_meta.
+* align_size: a function used to align the size of a memory block to a multiple of 8.
+* get_last: a function used to get the last block of a linked list.
+* find_reusable_block: a function used to find a free memory block of a given size.
+* allocate_memory: a function used to allocate memory using sbrk.
+* allocate_mapped_memory: a function used to allocate memory using mmap.
+* create_node: a function used to create a new memory block.
+* get_data_ptr: a function used to get the data pointer of a memory block.
+* split_block: a function used to split a memory block into two smaller blocks.
+* is_allocated: a function used to check if a memory block is allocated.
+* is_free: a function used to check if a memory block is free.
+* find_prev: a function used to find the previous block of a memory block.
+* find_last: a function used to find the last block of a linked list.
+* merge_free_blocks: a function used to merge adjacent free memory blocks.
+
+The code also uses some macros:
+* DIE_NEW: a macro used to handle errors and exit the program.
+* SAFE_ALLOC: a macro used to safely allocate memory.
+* MMAP_THRESHOLD: a macro used to define the maximum size of a memory block that can be allocated using sbrk.
+
+This code implements a simple memory allocator that uses sbrk and mmap to allocate memory.
+The os_malloc, os_calloc, os_realloc, and os_free functions are implemented to manage memory allocation and deallocation, and the other functions and structs are used to support their functionality.
